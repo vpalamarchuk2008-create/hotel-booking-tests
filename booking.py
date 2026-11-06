@@ -29,6 +29,6 @@ def booking_total(price_per_night, nights, promo_code=None):
         code = str(promo_code).strip().upper()
         if code not in PROMO_CODES:
             raise ValueError("Недійсний промокод")
-        total = total * (100 - PROMO_CODES[code]) / 100
+        total = total * (PROMO_CODES[code]) / 100
 
     return round(total, 2)
